@@ -1,4 +1,4 @@
-package com.streamvibe.api.models;
+package com.streamvibe.api.models.usuario;
 
 
 import lombok.AllArgsConstructor;
@@ -16,6 +16,7 @@ import lombok.Setter;
 
 public class Usuario {
 
+    private int id;
     private String nome;
     private String dataNascimento;
     private String email;
