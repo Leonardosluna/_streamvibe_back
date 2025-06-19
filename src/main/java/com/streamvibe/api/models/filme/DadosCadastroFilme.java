@@ -5,7 +5,7 @@ public record DadosCadastroFilme(
     String estudio,
     double duracao,
     String imagem,
-    String genero,
+    Genero genero,
     String diretor,
     String elenco,
     String sinopse) {
