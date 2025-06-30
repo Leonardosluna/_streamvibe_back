@@ -1,18 +1,28 @@
 package com.streamvibe.api.controllers;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.streamvibe.api.models.filme.DadosCadastroFilme;
+import com.streamvibe.api.models.filme.Filme;
+import com.streamvibe.api.models.filme.FilmeRepository;
+
+import jakarta.transaction.Transactional;
 
 @RestController
 @RequestMapping("/filme")
 public class FilmesController {
 
-    @PostMapping("/cadastrar")
-public void cadastrarFilme(@RequestBody String dados){
-        System.out.println(dados);
-    }
+    //Injeção de depedência
+    @Autowired
+    
+    private FilmeRepository repository;
+    
+    @PostMapping
+    @Transactional
+public void cadastrarFilme(@RequestBody DadosCadastroFilme dados) {
+        repository.save(new Filme(dados));
 
     
+    }
 }

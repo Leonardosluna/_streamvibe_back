@@ -20,8 +20,8 @@ public class Filme {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private Integer id;
+    
     private String nome;
     private String estudio;
     private double duracao;
